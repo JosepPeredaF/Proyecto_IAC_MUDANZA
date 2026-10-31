@@ -4,6 +4,21 @@ run-name: ${{github.actor}} esta ejecutando un pipeline
 on: [push]
 
 jobs:
+    Validar-Proyecto:
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "Analizar con SonarQube el Proyecto"
+
+    Validar-Terraform:
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo " Validar con formato y configuracion con terraform fmt y terraform validate"
+
+    Pruebas-Unitarias:
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "Ejecutando pruebas Unitarias con npm test"
+
     Saludar-Hello-word:
       runs-on: ubuntu-latest
       steps:
